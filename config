@@ -191,10 +191,11 @@ bindsym $mod+b border toggle
 
 # scratchpad
 bindsym $mod+m move scratchpad
-#bindsym $mod+o scratchpad show
+bindsym $mod+o scratchpad show
 
 bar {
         #status_command i3status.conf
+	i3bar_command i3bar -t
         position top
         status_command i3status --config /home/evan/.config/i3/i3status.conf
         #status_command i3status --config /usr/local/etc/i3status.conf
@@ -205,7 +206,38 @@ bar {
 exec --no-startup-id nm-applet
 
 # by evan 
+
+#亮度
+exec  --no-startup-id  sudo kldload acpi_video; sudo sysctl hw.acpi.video.crt0.brightness=30 
 #exec  --no-startup-id  /usr/local/bin/compton 
 #exec  --no-startup-id  /usr/local/bin/compton -CGb
 #exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/background.jpg
 exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mt_Uluguru_and_Sisal_plantations.jpg
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindcode 44 resize shrink width 10 px or 10 ppt
+        bindcode 45 resize grow height 10 px or 10 ppt
+        bindcode 46 resize shrink height 10 px or 10 ppt
+        bindcode 47 resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindcode 113 resize shrink width 10 px or 10 ppt
+        bindcode 116 resize grow height 10 px or 10 ppt
+        bindcode 111 resize shrink height 10 px or 10 ppt
+        bindcode 114 resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindcode 36 mode "default"
+        bindcode 9 mode "default"
+        bindcode $mod+27 mode "default"
+}
+
+bindcode $mod+27 mode "resize"
