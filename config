@@ -76,9 +76,10 @@ bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10:win
+bindsym $mod+9 workspace 9:win
+bindsym $mod+0 workspace 10#:win
 
+#"1:WEB", "2:workstation",  "3:python", "4:Develop", "5:D", "6:M", "7:U", "8:M","9:windows"}
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1:Web
 bindsym $mod+Shift+2 move container to workspace 2:work
@@ -88,8 +89,8 @@ bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10:win
+bindsym $mod+Shift+9 move container to workspace 9:win
+bindsym $mod+Shift+0 move container to workspace 10#:win
 
 
 
@@ -212,8 +213,8 @@ exec  --no-startup-id  sudo kldload acpi_video; sudo sysctl hw.acpi.video.crt0.b
 #exec  --no-startup-id  /usr/local/bin/compton 
 #exec  --no-startup-id  /usr/local/bin/compton -CGb
 #exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/background.jpg
-exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mt_Uluguru_and_Sisal_plantations.jpg
-
+#exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mt_Uluguru_and_Sisal_plantations.jpg
+exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mallnitz_Stappitz_Ankogel-Panorama_01.jpg
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -223,21 +224,22 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindcode 44 resize shrink width 10 px or 10 ppt
-        bindcode 45 resize grow height 10 px or 10 ppt
-        bindcode 46 resize shrink height 10 px or 10 ppt
-        bindcode 47 resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindcode 113 resize shrink width 10 px or 10 ppt
-        bindcode 116 resize grow height 10 px or 10 ppt
-        bindcode 111 resize shrink height 10 px or 10 ppt
-        bindcode 114 resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
-        bindcode 36 mode "default"
-        bindcode 9 mode "default"
-        bindcode $mod+27 mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
 }
 
-bindcode $mod+27 mode "resize"
+bindsym $mod+r mode "resize"
+
