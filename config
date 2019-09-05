@@ -197,13 +197,36 @@ bindsym $mod+o scratchpad show
 
 bar {
         #status_command i3status.conf
-	i3bar_command i3bar -t
+	#evan
+        i3bar_command i3bar -t
         position top
+        height 35
+
+        colors {
+        background #333333
+        statusline #FFFFFF
+        #eparator #3399FF	
+	
+	# http://tieba.baidu.com/p/5373848820
+	#evan
+}	
+
+#	i3bar_command i3bar -t
+#        position top
         status_command i3status --config /home/evan/.config/i3/i3status.conf
         #status_command i3status --config /usr/local/etc/i3status.conf
         #status_command i3status 
 	font pango:DejaVu Sans Mono 13
 }
+
+#evan
+# i3-gaps
+for_window [class="^.*"] border pixel 0
+gaps inner 5
+gaps outer 5
+smart_gaps on
+smart_borders on
+
 #　重新登录后状态栏右下将增加无线网管理图标
 exec --no-startup-id nm-applet
 
