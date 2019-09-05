@@ -19,7 +19,8 @@ font pango:monospace 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 #lock screen
 bindsym $mod+l exec i3lock
@@ -214,7 +215,8 @@ exec  --no-startup-id  sudo kldload acpi_video; sudo sysctl hw.acpi.video.crt0.b
 #exec  --no-startup-id  /usr/local/bin/compton -CGb
 #exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/background.jpg
 #exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mt_Uluguru_and_Sisal_plantations.jpg
-exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mallnitz_Stappitz_Ankogel-Panorama_01.jpg
+#exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mallnitz_Stappitz_Ankogel-Panorama_01.jpg
+exec  --no-startup-id /usr/local/bin/feh --bg-fill  /home/evan/wallpaper/Mallnitz_Stappitz_Ankogel-Panorama_01.jpg
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
