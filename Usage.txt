@@ -1,0 +1,3 @@
+evan@freebsdpc:~ % ls .config/i3/
+config		configbak	i3blocks.conf	i3status.conf	info
+
