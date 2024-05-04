@@ -29,7 +29,8 @@ bindsym $mod+l exec  i3lock     -i '/home/evan/wallpaper/f.png'
 #bindsym $mod+l exec  i3lock -t    -i '/home/evan/wallpaper/f.png'
 
 #xautolock -time 1 -locker "i3lock -i '/home/evan/wallpaper/f.jpg'" &
-exec   --no-startup-id  xautolock -time 1 -locker i3lock  
+#exec   --no-startup-id  xautolock -time 4 -locker i3lock  
+exec   --no-startup-id  xautolock -time 90 -locker i3lock  
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -51,9 +52,18 @@ bindsym $mod+Super_R focus down
 bindsym $mod+Print focus up
 
 # auto by evan
-exec --no-startup-id  fcitx # -r &
+exec --no-startup-id  fcitx5  -r &
+exec --no-startup-id    /usr/bin/redshift-gtk &
+exec --no-startup-id   sxhkd 
+exec --no-startup-id     /usr/bin/telegram-desktop -startintray 
+exec --no-startup-id    /usr/bin/xpad -h 
 exec --no-startup-id    synapse -s &
-exec  --no-startup-id xrdb /home/evan/.Xresources
+exec --no-startup-id    /usr/bin/rednotebook  &
+#exec --no-startup-id    synapse -s &
+#exec --no-startup-id    synapse -s &
+#exec --no-startup-id    synapse -s &
+#for bsd only
+#exec  --no-startup-id xrdb /home/evan/.Xresources
 
 # Workspace names
 workspace "1:Web"  output eDP1
@@ -141,8 +151,9 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 
+#evan  May 04  2024
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+#bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, default)
 bindsym $mod+s layout stacking
@@ -211,7 +222,7 @@ bar {
 	#evan
         i3bar_command i3bar -t
         position top
-        height 30
+        height 35
         #height 35
 
         colors {
@@ -246,14 +257,14 @@ exec --no-startup-id nm-applet
 
 # by evan 
 
-#亮度
-exec  --no-startup-id  sudo kldload acpi_video; sudo sysctl hw.acpi.video.crt0.brightness=30 
-exec  --no-startup-id  /usr/local/bin/compton 
+#亮度 bsd only 
+#exec  --no-startup-id  sudo kldload acpi_video; sudo sysctl hw.acpi.video.crt0.brightness=30 
+#exec  --no-startup-id  /usr/local/bin/compton 
 #exec  --no-startup-id  /usr/local/bin/compton -CGb
 #exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/background.jpg
 #exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mt_Uluguru_and_Sisal_plantations.jpg
-#exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Mallnitz_Stappitz_Ankogel-Panorama_01.jpg
-exec  --no-startup-id /usr/local/bin/feh --bg-fill  /home/evan/wallpaper/Mallnitz_Stappitz_Ankogel-Panorama_01.jpg
+exec  --no-startup-id /usr/local/bin/feh --bg-scale  /home/evan/wallpaper/Waltensburg.jpg
+#exec  --no-startup-id /usr/local/bin/feh --bg-fill  /home/evan/wallpaper/Mallnitz_Stappitz_Ankogel-Panorama_01.jpg
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
